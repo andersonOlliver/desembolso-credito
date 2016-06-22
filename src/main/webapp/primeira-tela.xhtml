@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/Layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:o="http://omnifaces.org/ui">
+
+    <f:metadata>
+        <f:viewParam name="grupo" value="#{consultaDesembolsoBean.grupo}" />
+        <f:viewAction action="#{consultaDesembolsoBean.consultar}" />
+    </f:metadata>
+
+    <ui:define name="titulo">Consulta de Conteudos</ui:define>
+
+    <ui:define name="corpo">
+
+        <h1>Consulta de Conteudos</h1>
+
+        <h:form id="frm">
+
+
+            <p:dataTable id="tbl" value="#{consultaDesembolsoBean.dados}"
+                         var="item"
+                         >
+
+                <p:column headerText="Prefixo">
+                    <h:outputText value="#{item.prefixoSuperintendencia}" />
+                </p:column>
+
+                <p:column headerText="Dependência">
+                    <h:outputText value="#{item.nomeSuperintendencia}" />
+                </p:column>
+
+                <p:column headerText="Orçamento proporcional acumulado">
+                    <h:outputText value="#{item.orcamentoPropostoAcumulado}" >
+                        <f:convertNumber pattern="#0.000"/>
+                        
+                    </h:outputText>
+                </p:column>
+
+
+                <!--
+                                                <p:column width="70" style="text-align: center">
+                                                        <p:button icon="ui-icon-pencil" title="Editar"
+                                                                outcome="CadastroUsuario">
+                                                                <f:param name="id" value="#{item.id}" />
+                                                        </p:button>
+                                                        <p:commandButton icon="ui-icon-trash" title="Excluir"
+                                                                process="@this" update="@form"
+                                                                action="#{consultaUsuariosBean.excluir}">
+                                                                <f:setPropertyActionListener value="#{item}"
+                                                                        target="#{consultaUsuariosBean.usuarioSelecionado}" />
+                                                        </p:commandButton>
+                                                </p:column>
+                -->
+            </p:dataTable>
+            <!-- 
+                        <h:commandLink>
+                            <h:outputText value="exportar" />
+                            <p:dataExporter type="xls" target="tbl" fileName="dados" pageOnly="true" />
+                        </h:commandLink>
+            -->   </h:form>
+    </ui:define>
+
+</ui:composition>
