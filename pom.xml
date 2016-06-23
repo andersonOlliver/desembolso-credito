@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.bb.intranet.supermt</groupId>
     <artifactId>desembolso</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>war</packaging>
     
     <properties>
@@ -28,34 +28,12 @@
             <version>6.0</version>
             <scope>compile</scope>
         </dependency>
-        
-        <!-- Primeface Extensions (Biblioteca de componentes) -->
-        <dependency>
-            <groupId>org.primefaces.extensions</groupId>
-            <artifactId>primefaces-extensions</artifactId>
-            <version>6.0.0</version>
-        </dependency>
 
-        <!-- Weld (implementação do CDI) -->
-        <dependency>
-            <groupId>org.jboss.weld.servlet</groupId>
-            <artifactId>weld-servlet</artifactId>
-            <version>2.3.4.Final</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <!-- Weld depende do Jandex -->
-        <dependency>
-            <groupId>org.jboss</groupId>
-            <artifactId>jandex</artifactId>
-            <version>2.0.0.Final</version>
-            <scope>compile</scope>
-        </dependency>
         <!-- Implementacao do Bean Validation -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>5.2.0.Final</version>
+            <version>5.1.3.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -63,7 +41,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.1.0.Final</version>
+            <version>4.3.8.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -71,7 +49,15 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.1.0.Final</version>
+            <version>4.3.8.Final</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <!-- Pool de conexoes com C3P0 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>4.3.8.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -83,11 +69,19 @@
             <scope>compile</scope>
         </dependency>
         
-        <!-- Pool de conexoes com C3P0 -->
+        <!-- Weld (implementação do CDI) -->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-c3p0</artifactId>
-            <version>5.1.0.Final</version>
+            <groupId>org.jboss.weld.servlet</groupId>
+            <artifactId>weld-servlet</artifactId>
+            <version>2.2.9.Final</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <!-- Weld depende do Jandex -->
+        <dependency>
+            <groupId>org.jboss</groupId>
+            <artifactId>jandex</artifactId>
+            <version>1.2.2.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -95,16 +89,18 @@
         <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.faces</artifactId>
-            <version>2.2.10</version>
+            <version>2.2.9</version>
             <scope>compile</scope>
         </dependency>
 
+        <!-- Commons Lang (utilidades) -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.1</version>
         </dependency>
         
+        <!--Poi (importar excel)-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -129,6 +125,7 @@
             <version>3.14</version>
         </dependency>
         
+        <!-- API de Servlet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
