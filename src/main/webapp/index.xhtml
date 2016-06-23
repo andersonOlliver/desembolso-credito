@@ -23,7 +23,7 @@
             <!--TODOS OS CODIGOS AQUI!-->
 
             <p:dataTable id="tbl" value="#{consultaDesembolsoSuperBean.dados}"
-                         var="item">
+                         reflow="true" rows="5" paginator="true" var="item">
 
                 <p:column headerText="Prefixo">
                     <h:outputText value="#{item.prefixoSuperintendencia}" />

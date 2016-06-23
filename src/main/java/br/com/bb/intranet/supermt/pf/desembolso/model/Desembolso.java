@@ -1,6 +1,7 @@
 package br.com.bb.intranet.supermt.pf.desembolso.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -55,34 +56,34 @@ public class Desembolso implements Serializable {
     private String nomeAgencia;
 
     @Column(precision = 20, scale = 2)
-    private String orcamentoPropostoAcumulado;
+    private BigDecimal orcamentoPropostoAcumulado;
 
     @Column(precision = 20, scale = 2)
-    private String realizadoAtual;
+    private BigDecimal realizadoAtual;
 
     @Column(precision = 20, scale = 2)
-    private String percentualAtingimentoUm;
+    private BigDecimal percentualAtingimentoUm;
 
     @Column(precision = 20, scale = 2)
-    private String realizadoDmenosUm;
+    private BigDecimal realizadoDmenosUm;
 
     @Column(precision = 20, scale = 2)
-    private String necessidadeDiaDmenosUm;
+    private BigDecimal necessidadeDiaDmenosUm;
 
     @Column(precision = 20, scale = 2)
-    private String metaContatosAcumulada;
+    private BigDecimal metaContatosAcumulada;
 
     @Column(precision = 20, scale = 2)
-    private String realizadoContatosMes;
+    private BigDecimal realizadoContatosMes;
 
     @Column(precision = 20, scale = 2)
-    private String percentualAtingimentoContatos;
+    private BigDecimal percentualAtingimentoContatos;
 
     @Column(precision = 20, scale = 2)
-    private String contatosDmenosUm;
+    private BigDecimal contatosDmenosUm;
 
     @Column(precision = 20, scale = 2)
-    private String contatosDmenosDois;
+    private BigDecimal contatosDmenosDois;
 
     @NotEmpty
     @Size(max = 5)
@@ -101,22 +102,22 @@ public class Desembolso implements Serializable {
     private String carteira;
 
     @Column(precision = 20, scale = 2)
-    private String orcamentoProporcionalAcumuladoDois;
+    private BigDecimal orcamentoProporcionalAcumuladoDois;
 
     @Column(precision = 20, scale = 2)
-    private String realizadoAtualDois;
+    private BigDecimal realizadoAtualDois;
 
     @Column(precision = 20, scale = 2)
-    private String percentualAgintimentoDois;
+    private BigDecimal percentualAgintimentoDois;
 
     @Column(precision = 20, scale = 2)
-    private String metaContatosAcumuladaDois;
+    private BigDecimal metaContatosAcumuladaDois;
 
     @Column(precision = 20, scale = 2)
-    private String realizadoContatosMesDois;
+    private BigDecimal realizadoContatosMesDois;
 
     @Column(length = 5)
-    private Integer percentualAtingimentoContatosDois;
+    private BigDecimal percentualAtingimentoContatosDois;
 
     public Long getId() {
         return id;
@@ -182,86 +183,6 @@ public class Desembolso implements Serializable {
         this.nomeAgencia = nomeAgencia;
     }
 
-    public String getOrcamentoPropostoAcumulado() {
-        return orcamentoPropostoAcumulado;
-    }
-
-    public void setOrcamentoPropostoAcumulado(String orcamentoPropostoAcumulado) {
-        this.orcamentoPropostoAcumulado = orcamentoPropostoAcumulado;
-    }
-
-    public String getRealizadoAtual() {
-        return realizadoAtual;
-    }
-
-    public void setRealizadoAtual(String realizadoAtual) {
-        this.realizadoAtual = realizadoAtual;
-    }
-
-    public String getPercentualAtingimentoUm() {
-        return percentualAtingimentoUm;
-    }
-
-    public void setPercentualAtingimentoUm(String percentualAtingimentoUm) {
-        this.percentualAtingimentoUm = percentualAtingimentoUm;
-    }
-
-    public String getRealizadoDmenosUm() {
-        return realizadoDmenosUm;
-    }
-
-    public void setRealizadoDmenosUm(String realizadoDmenosUm) {
-        this.realizadoDmenosUm = realizadoDmenosUm;
-    }
-
-    public String getNecessidadeDiaDmenosUm() {
-        return necessidadeDiaDmenosUm;
-    }
-
-    public void setNecessidadeDiaDmenosUm(String necessidadeDiaDmenosUm) {
-        this.necessidadeDiaDmenosUm = necessidadeDiaDmenosUm;
-    }
-
-    public String getMetaContatosAcumulada() {
-        return metaContatosAcumulada;
-    }
-
-    public void setMetaContatosAcumulada(String metaContatosAcumulada) {
-        this.metaContatosAcumulada = metaContatosAcumulada;
-    }
-
-    public String getRealizadoContatosMes() {
-        return realizadoContatosMes;
-    }
-
-    public void setRealizadoContatosMes(String realizadoContatosMes) {
-        this.realizadoContatosMes = realizadoContatosMes;
-    }
-
-    public String getPercentualAtingimentoContatos() {
-        return percentualAtingimentoContatos;
-    }
-
-    public void setPercentualAtingimentoContatos(String percentualAtingimentoContatos) {
-        this.percentualAtingimentoContatos = percentualAtingimentoContatos;
-    }
-
-    public String getContatosDmenosUm() {
-        return contatosDmenosUm;
-    }
-
-    public void setContatosDmenosUm(String contatosDmenosUm) {
-        this.contatosDmenosUm = contatosDmenosUm;
-    }
-
-    public String getContatosDmenosDois() {
-        return contatosDmenosDois;
-    }
-
-    public void setContatosDmenosDois(String contatosDmenosDois) {
-        this.contatosDmenosDois = contatosDmenosDois;
-    }
-
     public String getPrefixoRepete() {
         return prefixoRepete;
     }
@@ -294,51 +215,131 @@ public class Desembolso implements Serializable {
         this.carteira = carteira;
     }
 
-    public String getOrcamentoProporcionalAcumuladoDois() {
+    public BigDecimal getOrcamentoPropostoAcumulado() {
+        return orcamentoPropostoAcumulado;
+    }
+
+    public void setOrcamentoPropostoAcumulado(BigDecimal orcamentoPropostoAcumulado) {
+        this.orcamentoPropostoAcumulado = orcamentoPropostoAcumulado;
+    }
+
+    public BigDecimal getRealizadoAtual() {
+        return realizadoAtual;
+    }
+
+    public void setRealizadoAtual(BigDecimal realizadoAtual) {
+        this.realizadoAtual = realizadoAtual;
+    }
+
+    public BigDecimal getPercentualAtingimentoUm() {
+        return percentualAtingimentoUm;
+    }
+
+    public void setPercentualAtingimentoUm(BigDecimal percentualAtingimentoUm) {
+        this.percentualAtingimentoUm = percentualAtingimentoUm;
+    }
+
+    public BigDecimal getRealizadoDmenosUm() {
+        return realizadoDmenosUm;
+    }
+
+    public void setRealizadoDmenosUm(BigDecimal realizadoDmenosUm) {
+        this.realizadoDmenosUm = realizadoDmenosUm;
+    }
+
+    public BigDecimal getNecessidadeDiaDmenosUm() {
+        return necessidadeDiaDmenosUm;
+    }
+
+    public void setNecessidadeDiaDmenosUm(BigDecimal necessidadeDiaDmenosUm) {
+        this.necessidadeDiaDmenosUm = necessidadeDiaDmenosUm;
+    }
+
+    public BigDecimal getMetaContatosAcumulada() {
+        return metaContatosAcumulada;
+    }
+
+    public void setMetaContatosAcumulada(BigDecimal metaContatosAcumulada) {
+        this.metaContatosAcumulada = metaContatosAcumulada;
+    }
+
+    public BigDecimal getRealizadoContatosMes() {
+        return realizadoContatosMes;
+    }
+
+    public void setRealizadoContatosMes(BigDecimal realizadoContatosMes) {
+        this.realizadoContatosMes = realizadoContatosMes;
+    }
+
+    public BigDecimal getPercentualAtingimentoContatos() {
+        return percentualAtingimentoContatos;
+    }
+
+    public void setPercentualAtingimentoContatos(BigDecimal percentualAtingimentoContatos) {
+        this.percentualAtingimentoContatos = percentualAtingimentoContatos;
+    }
+
+    public BigDecimal getContatosDmenosUm() {
+        return contatosDmenosUm;
+    }
+
+    public void setContatosDmenosUm(BigDecimal contatosDmenosUm) {
+        this.contatosDmenosUm = contatosDmenosUm;
+    }
+
+    public BigDecimal getContatosDmenosDois() {
+        return contatosDmenosDois;
+    }
+
+    public void setContatosDmenosDois(BigDecimal contatosDmenosDois) {
+        this.contatosDmenosDois = contatosDmenosDois;
+    }
+
+    public BigDecimal getOrcamentoProporcionalAcumuladoDois() {
         return orcamentoProporcionalAcumuladoDois;
     }
 
-    public void setOrcamentoProporcionalAcumuladoDois(String orcamentoProporcionalAcumuladoDois) {
+    public void setOrcamentoProporcionalAcumuladoDois(BigDecimal orcamentoProporcionalAcumuladoDois) {
         this.orcamentoProporcionalAcumuladoDois = orcamentoProporcionalAcumuladoDois;
     }
 
-    public String getRealizadoAtualDois() {
+    public BigDecimal getRealizadoAtualDois() {
         return realizadoAtualDois;
     }
 
-    public void setRealizadoAtualDois(String realizadoAtualDois) {
+    public void setRealizadoAtualDois(BigDecimal realizadoAtualDois) {
         this.realizadoAtualDois = realizadoAtualDois;
     }
 
-    public String getPercentualAgintimentoDois() {
+    public BigDecimal getPercentualAgintimentoDois() {
         return percentualAgintimentoDois;
     }
 
-    public void setPercentualAgintimentoDois(String percentualAgintimentoDois) {
+    public void setPercentualAgintimentoDois(BigDecimal percentualAgintimentoDois) {
         this.percentualAgintimentoDois = percentualAgintimentoDois;
     }
 
-    public String getMetaContatosAcumuladaDois() {
+    public BigDecimal getMetaContatosAcumuladaDois() {
         return metaContatosAcumuladaDois;
     }
 
-    public void setMetaContatosAcumuladaDois(String metaContatosAcumuladaDois) {
+    public void setMetaContatosAcumuladaDois(BigDecimal metaContatosAcumuladaDois) {
         this.metaContatosAcumuladaDois = metaContatosAcumuladaDois;
     }
 
-    public String getRealizadoContatosMesDois() {
+    public BigDecimal getRealizadoContatosMesDois() {
         return realizadoContatosMesDois;
     }
 
-    public void setRealizadoContatosMesDois(String realizadoContatosMesDois) {
+    public void setRealizadoContatosMesDois(BigDecimal realizadoContatosMesDois) {
         this.realizadoContatosMesDois = realizadoContatosMesDois;
     }
 
-    public Integer getPercentualAtingimentoContatosDois() {
+    public BigDecimal getPercentualAtingimentoContatosDois() {
         return percentualAtingimentoContatosDois;
     }
 
-    public void setPercentualAtingimentoContatosDois(Integer percentualAtingimentoContatosDois) {
+    public void setPercentualAtingimentoContatosDois(BigDecimal percentualAtingimentoContatosDois) {
         this.percentualAtingimentoContatosDois = percentualAtingimentoContatosDois;
     }
 

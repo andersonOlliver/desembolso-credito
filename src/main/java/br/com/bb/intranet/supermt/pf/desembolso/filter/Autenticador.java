@@ -29,6 +29,7 @@ import java.util.StringTokenizer;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -40,7 +41,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@ManagedBean
+@Named
 //@WebFilter(filterName = "LoginCheckFilter", urlPatterns = "*.super")
 public class Autenticador implements Filter {
 

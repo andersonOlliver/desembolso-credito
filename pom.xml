@@ -3,8 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.bb.intranet.supermt</groupId>
     <artifactId>desembolso</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -39,7 +40,7 @@
         <dependency>
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet</artifactId>
-            <version>2.2.9.Final</version>
+            <version>2.3.4.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -47,14 +48,14 @@
         <dependency>
             <groupId>org.jboss</groupId>
             <artifactId>jandex</artifactId>
-            <version>1.2.3.Final</version>
+            <version>2.0.0.Final</version>
             <scope>compile</scope>
         </dependency>
         <!-- Implementacao do Bean Validation -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>5.1.3.Final</version>
+            <version>5.2.0.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -62,7 +63,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.3.8.Final</version>
+            <version>5.1.0.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -70,7 +71,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.8.Final</version>
+            <version>5.1.0.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -79,6 +80,14 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.34</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <!-- Pool de conexoes com C3P0 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>5.1.0.Final</version>
             <scope>compile</scope>
         </dependency>
 
@@ -93,12 +102,30 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.3.2</version>
+            <version>3.1</version>
         </dependency>
         
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
+            <version>3.14</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.14</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml-schemas</artifactId>
+            <version>3.14</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
             <version>3.14</version>
         </dependency>
         
@@ -112,6 +139,7 @@
     </dependencies>
 
     <build>
+        <finalName>DesembolsoCredito</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

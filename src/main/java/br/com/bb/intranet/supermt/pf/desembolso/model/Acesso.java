@@ -46,7 +46,7 @@ public class Acesso implements Serializable {
         this.horario = horario;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(nullable = false)
     public String getPagina() {
         return pagina;
     }
