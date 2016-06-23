@@ -8,69 +8,39 @@
                 xmlns:pe="http://primefaces.org/ui/extensions">
 
     <f:metadata>
-        <!--<f:viewAction action="#{consultaContainerBean.consultar}" />-->
+        <f:viewAction action="#{consultaDesembolsoSuperBean.consultar}" />
     </f:metadata>
 
-    <ui:define name="titulo">Consulta de Container</ui:define>
+    <ui:define name="titulo">Orçamento Proposto Acumulado</ui:define>
 
     <ui:define name="corpo">
 
-        <!--<h1>Consulta de Container</h1>-->
+        <h1>Orçamento Proposto Acumulado Superintendências</h1>
 
         <h:form id="frm">
             <p:messages showDetail="false" showSummary="true" autoUpdate="true" />
 
             <!--TODOS OS CODIGOS AQUI!-->
 
-            <!--            <p:graphicImage id="bemvindo" library="supermt" name="bem-vindo.jpg" width="100%" />-->
-            <pe:masterDetail id="masterDetail" level="#{simpleMasterDetailController.currentLevel}">  
+            <p:dataTable id="tbl" value="#{consultaDesembolsoSuperBean.dados}"
+                         var="item">
 
-                <pe:masterDetailLevel level="1" levelLabel="Sports">   
-                    <p:dataTable id="sports" value="#{simpleMasterDetailController.sports}" var="sport">  
-                        <p:column  headerText="Sport">  
-                            <p:commandLink value="#{sport.name}">  
-                                <pe:selectDetailLevel contextValue="#{sport}"/>  
-                            </p:commandLink>  
-                        </p:column>  
-                        <p:column headerText="Number of countries with leagues">  
-                            <h:outputText value="#{sport.countriesWithLeague.size()}"/>  
-                        </p:column>  
-                    </p:dataTable>  
-                </pe:masterDetailLevel>  
+                <p:column headerText="Prefixo">
+                    <h:outputText value="#{item.prefixoSuperintendencia}" />
+                </p:column>
 
-                <pe:masterDetailLevel level="2" contextVar="sport" levelLabel="Countries having #{sport.name} leagues">  
-                    <p:dataTable id="countries" value="#{sport.countriesWithLeague}" var="country">  
-                        <p:column headerText="Country">  
-                            <p:commandLink value="#{country.name}">  
-                                <pe:selectDetailLevel contextValue="#{country}"/>  
-                            </p:commandLink>  
-                        </p:column>  
-                        <p:column headerText="Code">  
-                            <h:outputText value="#{country.code}"/>  
-                        </p:column>  
-                    </p:dataTable>  
-                </pe:masterDetailLevel>  
+                <p:column headerText="Dependência">
+                    <h:outputText value="#{item.nomeSuperintendencia}" />
+                </p:column>
 
-                <pe:masterDetailLevel level="3" contextVar="country" levelLabel="#{country.sport} leagues of #{country.name}">  
-                    <p:dataTable id="leauges" value="#{country.leagues}" var="league">  
-                        <p:column headerText="League">  
-                            <h:outputText value="#{league.name}"/>  
-                        </p:column>  
-                        <p:column headerText="Number of teams">  
-                            <h:outputText value="#{league.numberOfTeam}"/>  
-                        </p:column>  
-                    </p:dataTable>  
-                    <h:panelGrid columns="2" style="margin-top: 10px">  
-                        <p:commandButton value="Go to Sports" icon="ui-icon-arrowthickstop-1-w">  
-                            <pe:selectDetailLevel level="1"/>  
-                        </p:commandButton>  
-                        <p:commandButton value="Go to Countries" icon="ui-icon-arrowthick-1-w">  
-                            <pe:selectDetailLevel step="-1"/>  
-                        </p:commandButton>  
-                    </h:panelGrid>  
-                </pe:masterDetailLevel>  
+                <p:column headerText="Orçamento proporcional acumulado">
+                    <h:outputText value="#{item.orcamentoPropostoAcumulado}" >
+                        <f:convertNumber type="currency" />
+                    </h:outputText>
+                </p:column>
 
-            </pe:masterDetail> 
+            </p:dataTable>
+
         </h:form>
     </ui:define>
 </ui:composition>

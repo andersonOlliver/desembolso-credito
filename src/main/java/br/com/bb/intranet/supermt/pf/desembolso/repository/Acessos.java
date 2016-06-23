@@ -1,74 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.bb.intranet.supermt.pf.desembolso.repository;
 
-import br.com.bb.intranet.supermt.pf.desembolso.model.DesembolsoCreditoPFeContatos;
+import br.com.bb.intranet.supermt.pf.desembolso.model.Acesso;
 import java.io.Serializable;
 import java.util.List;
+
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 
-/**
- *
- * @author Olliver
- */
-public class Acessos implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
-    private EntityManager manager;
+public class Acessos  implements Serializable {
 
-    @Inject
-    public Acessos(EntityManager manager) {
-        this.manager = manager;
-    }
+	private static final long serialVersionUID = 1L;
 
-    public DesembolsoCreditoPFeContatos porId(Long id) {
-        return manager.find(DesembolsoCreditoPFeContatos.class, id);
-    }
+	private EntityManager manager;
 
-    public List<DesembolsoCreditoPFeContatos> todas() {
-        TypedQuery<DesembolsoCreditoPFeContatos> query = manager.createQuery(
-                "from DesembolsoCreditoPFeContatos", DesembolsoCreditoPFeContatos.class);
+	@Inject
+	public Acessos(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	public List<Acesso> todos(){
+		TypedQuery<Acesso> query = manager.createQuery(
+				"from Navegacao", Acesso.class);
+		return query.getResultList();
+	}
+	
+	public Acesso porId(Long id){
+		return manager.find(Acesso.class, id);
+	}
+	
+	public void adicionar(Acesso navegacao){
+		this.manager.persist(navegacao);
+	}
+	
+	public void atualizar(Acesso navegacao){
+		this.manager.merge(navegacao);
+	}
 
-        return query.getResultList();
-    }
-
-    
-    public List<DesembolsoCreditoPFeContatos> porGrupo(String grupo) {
-        Criteria criteria = criarCriteria();
-
-        criteria.add(Restrictions.ilike("grupo", grupo));
-
-        return criteria.list();
-    }
-
-    public void adicionar(DesembolsoCreditoPFeContatos valor) {
-        this.manager.persist(valor);
-    }
-
-    public void guardar(DesembolsoCreditoPFeContatos valor) {
-        this.manager.merge(valor);
-    }
-
-    public void remover(DesembolsoCreditoPFeContatos valor) {
-        this.manager.remove(valor);
-    }
-
-    /*
-	 * CONFIGURAÇÃO DE SESSÃO
-     */
-    private Criteria criarCriteria() {
-        Session session = manager.unwrap(Session.class);
-        Criteria criteria = session.createCriteria(DesembolsoCreditoPFeContatos.class);
-
-        return criteria;
-    }
 }

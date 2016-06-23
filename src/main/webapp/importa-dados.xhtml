@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/Layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:pe="http://primefaces.org/ui/extensions">
+
+    <f:metadata>
+        <f:viewAction action="#{importaDadosPlanilha.preparaPlanilha}" />
+    </f:metadata>
+
+    <ui:define name="titulo">Importar Dados</ui:define>
+
+    <ui:define name="corpo">
+
+        <h1>Importar Dados</h1>
+
+
+
+        <h:form id="frm">
+            <!--<p:messages showDetail="false" showSummary="true" autoUpdate="true" />-->
+            <p:growl id="messages" showDetail="true" />
+
+            <!--TODOS OS CODIGOS AQUI!-->
+
+
+            <div class="ui-grid">
+                <p:panelGrid id="capaPanel" columns="6" layout="grid"
+                             style="margin-top: 20px; margin-bottom: 40px"
+                             styleClass="panelgrid-noborder"
+                             columnClasses="ui-grid-col-2, ui-grid-col-2, ui-grid-col-2, ui-grid-col-2, ui-grid-col-2, ui-grid-col-2">
+
+
+                    <p:outputLabel value="Número da planilha a ser importada" for="planilha_numero" />
+                    <p:inputText id="planilha_numero" value="#{importaDadosPlanilha.planilha.numeroDaPlanilha}" >
+                        <p:ajax event="blur" />
+                    </p:inputText>
+
+                    <p:outputLabel value="Primeira linha a ser considerada" for="planilha_primeira" />
+                    <p:inputText id="planilha_primeira" value="#{importaDadosPlanilha.planilha.primeiraLinha}" >
+                         <p:ajax event="blur" />
+                    </p:inputText>
+
+                    <p:outputLabel value="Última linha a ser considerada" for="planilha_ultima" />
+                    <p:inputText id="planilha_ultima" value="#{importaDadosPlanilha.planilha.ultimaLinha}" >
+                         <p:ajax event="blur" />
+                    </p:inputText>
+
+                </p:panelGrid>
+                <p:fileUpload fileUploadListener="#{importaDadosPlanilha.processaPlanilha}" mode="advanced" dragDropSupport="true"
+                              update="messages" sizeLimit="15000000" allowTypes="/(\.|\/)(xls?m|xlsx)$/" />
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

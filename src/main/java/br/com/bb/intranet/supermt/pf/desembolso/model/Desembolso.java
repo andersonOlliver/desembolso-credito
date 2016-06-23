@@ -12,112 +12,111 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name="desembolsoCreditoPFeContatos")
-public class DesembolsoCreditoPFeContatos implements Serializable {
+@Table(name = "desembolsoCreditoPFeContatos")
+public class Desembolso implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue
-	private Long id;
-	
-	@Column(name="grupo", length = 2)
-	private String grupo;
-	
-	@NotEmpty
-	@Size(max = 5)
-	@Column( length = 5)
-	private String prefixoSuperintendencia;
-	
-	@NotEmpty
-	@Size(max = 150)
-	@Column(length = 150)
-	private String nomeSuperintendencia;
-	
-	@NotEmpty
-	@Size(max = 5)
-	@Column( length = 5)
-	private String prefixoRegional;
-	
-	@NotEmpty
-	@Size(max = 150)
-	@Column(length = 150)
-	private String nomeRegional;
-	
-	@NotEmpty
-	@Size(max = 5)
-	@Column( length = 5)
-	private String prefixoAgencia;
-	
-	@NotEmpty
-	@Size(max = 150)
-	@Column(length = 150)
-	private String nomeAgencia;
-	
-	
-	@Column(length = 150)
-	private String orcamentoPropostoAcumulado;
-	
-	@Column(length = 50)
-	private String realizadoAtual;
-	
-	@Column(length = 50)
-	private String percentualAtingimentoUm;
-	
-	@Column(length = 50)
-	private String realizadoDmenosUm;
-	
-	@Column(length = 50)
-	private String necessidadeDiaDmenosUm;
-	
-	@Column(length = 50)
-	private String metaContatosAcumulada;
-	
-	@Column(length = 50)
-	private String realizadoContatosMes;
-	
-	@Column(length = 50)
-	private String percentualAtingimentoContatos;
-	
-	@Column(length = 50)
-	private String contatosDmenosUm;
-	
-	@Column(length = 50)
-	private String contatosDmenosDois;
-	
-	@NotEmpty
-	@Size(max = 5)
-	@Column( length = 5)
-	private String prefixoRepete;
-	
-	@NotEmpty
-	@Size(max = 150)
-	@Column(length = 150)
-	private String agenciaRepete;
-	
-	@Column(length = 10)
-	private String codigoCarteira;
-	
-	@Column(length = 80)
-	private String carteira;
-	
-	@Column(length = 50)
-	private String orcamentoProporcionalAcumuladoDois;
-	
-	@Column(length = 50)
-	private String realizadoAtualDois;
-	
-	@Column(length = 50)
-	private String percentualAgintimentoDois;
-	
-	@Column(length = 50)
-	private String metaContatosAcumuladaDois;
-	
-	@Column(length = 50)
-	private String realizadoContatosMesDois;
-	
-	@Column(length = 5)
-	private Integer percentualAtingimentoContatosDois;
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "grupo", length = 2)
+    private String grupo;
+
+    @NotEmpty
+    @Size(max = 5)
+    @Column(length = 5)
+    private String prefixoSuperintendencia;
+
+    @NotEmpty
+    @Size(max = 150)
+    @Column(length = 150)
+    private String nomeSuperintendencia;
+
+    @NotEmpty
+    @Size(max = 5)
+    @Column(length = 5)
+    private String prefixoRegional;
+
+    @NotEmpty
+    @Size(max = 150)
+    @Column(length = 150)
+    private String nomeRegional;
+
+    @NotEmpty
+    @Size(max = 5)
+    @Column(length = 5)
+    private String prefixoAgencia;
+
+    @NotEmpty
+    @Size(max = 150)
+    @Column(length = 150)
+    private String nomeAgencia;
+
+    @Column(precision = 20, scale = 2)
+    private String orcamentoPropostoAcumulado;
+
+    @Column(precision = 20, scale = 2)
+    private String realizadoAtual;
+
+    @Column(precision = 20, scale = 2)
+    private String percentualAtingimentoUm;
+
+    @Column(precision = 20, scale = 2)
+    private String realizadoDmenosUm;
+
+    @Column(precision = 20, scale = 2)
+    private String necessidadeDiaDmenosUm;
+
+    @Column(precision = 20, scale = 2)
+    private String metaContatosAcumulada;
+
+    @Column(precision = 20, scale = 2)
+    private String realizadoContatosMes;
+
+    @Column(precision = 20, scale = 2)
+    private String percentualAtingimentoContatos;
+
+    @Column(precision = 20, scale = 2)
+    private String contatosDmenosUm;
+
+    @Column(precision = 20, scale = 2)
+    private String contatosDmenosDois;
+
+    @NotEmpty
+    @Size(max = 5)
+    @Column(length = 5)
+    private String prefixoRepete;
+
+    @NotEmpty
+    @Size(max = 150)
+    @Column(length = 150)
+    private String agenciaRepete;
+
+    @Column(length = 10)
+    private String codigoCarteira;
+
+    @Column(length = 80)
+    private String carteira;
+
+    @Column(precision = 20, scale = 2)
+    private String orcamentoProporcionalAcumuladoDois;
+
+    @Column(precision = 20, scale = 2)
+    private String realizadoAtualDois;
+
+    @Column(precision = 20, scale = 2)
+    private String percentualAgintimentoDois;
+
+    @Column(precision = 20, scale = 2)
+    private String metaContatosAcumuladaDois;
+
+    @Column(precision = 20, scale = 2)
+    private String realizadoContatosMesDois;
+
+    @Column(length = 5)
+    private Integer percentualAtingimentoContatosDois;
 
     public Long getId() {
         return id;
@@ -343,34 +342,34 @@ public class DesembolsoCreditoPFeContatos implements Serializable {
         this.percentualAtingimentoContatosDois = percentualAtingimentoContatosDois;
     }
 
-	
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Desembolso other = (Desembolso) obj;
+        if (id == null) {
+            if (other.id != null) {
+                return false;
+            }
+        } else if (!id.equals(other.id)) {
+            return false;
+        }
+        return true;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		DesembolsoCreditoPFeContatos other = (DesembolsoCreditoPFeContatos) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
-	
-	
-	
 }

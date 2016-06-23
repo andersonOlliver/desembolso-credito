@@ -5,8 +5,8 @@
  */
 package br.com.bb.intranet.supermt.pf.desembolso.controller;
 
-import br.com.bb.intranet.supermt.pf.desembolso.model.DesembolsoCreditoPFeContatos;
-import br.com.bb.intranet.supermt.pf.desembolso.repository.Acessos;
+import br.com.bb.intranet.supermt.pf.desembolso.model.Desembolso;
+import br.com.bb.intranet.supermt.pf.desembolso.repository.Desembolsos;
 import java.io.Serializable;
 import java.util.List;
 import javax.faces.view.ViewScoped;
@@ -19,33 +19,23 @@ import javax.inject.Named;
  */
 @Named
 @ViewScoped
-public class ConsultaDesembolsoBean implements Serializable {
+public class ConsultaDesembolsoSuperBean implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private static final String VALORPADRAO = "A";
 
     @Inject
-    private Acessos repository;
+    private Desembolsos repository;
 
-    private List<DesembolsoCreditoPFeContatos> dados;
+    private List<Desembolso> dados;
     private String grupo;
 
     public void consultar() {
-//        if(grupo == null){
+        
         this.dados = this.repository.todas();
-//        }
-
-//        try {
-//            this.dados = this.repository.porGrupo(this.grupo);
-//
-//        } catch (NullPointerException e) {
-//            this.dados = this.repository.porGrupo(VALORPADRAO);
-//        } catch (IllegalArgumentException e) {
-//            this.dados = this.repository.porGrupo(VALORPADRAO);
-//        }
+        
     }
 
-    public List<DesembolsoCreditoPFeContatos> getDados() {
+    public List<Desembolso> getDados() {
         return dados;
     }
 

@@ -31,39 +31,11 @@
         </header>
 
         <h:form>
-            <p:menubar style="margin-top: -20px; margin-bottom: 20px">
-                <p:submenu label="Cadastros">
-<!--                    <p:menuitem value="Agência"
-                                action="cadastro-agencia?faces-redirect=true" />	
-                    <p:menuitem value="Funcionário" 
-                                action="cadastro-funcionario?faces-redirect=true" />-->
-                    <!--                    <p:menuitem value="Estágio"
-                                                    action="cadastro-estagio?faces-redirect=true" />
-                                        <p:menuitem value="Operação"
-                                                    action="cadastro-operacao?faces-redirect=true" />
-                                        <p:menuitem value="Produto"
-                                                    action="cadastro-produto?faces-redirect=true" />-->
-                    <!--                            <p:menuitem value="Pagina"
-                                                        action="CadastroPagina?faces-redirect=true" />
-                                                <p:menuitem value="Sugestao"
-                                                        action="CadastroSugestao?faces-redirect=true" />
-                                                <p:menuitem value="Usuario"
-                                                        action="CadastroUsuario?faces-redirect=true" />-->
+            <p:menubar rendered="true" style="margin-top: -20px; margin-bottom: 20px">
+                <p:submenu label="Sistema">
+                    <p:menuitem value="Importar Dados" action="importa-dados?faces-redirect=true" />
                 </p:submenu>
-                <p:submenu label="Consultas">
-<!--                    <p:menuitem value="Agência"
-                                action="lista-agencia?faces-redirect=true" />
-                    <p:menuitem value="Funcionário"
-                                action="lista-funcionario?faces-redirect=true" />-->
-                    <!--                                <p:menuitem value="Menu" action="/ListaMenu?faces-redirect=true" />
-                                                    <p:menuitem value="Mercado"
-                                                            action="/ListaMercado?faces-redirect=true" />
-                                                    <p:menuitem value="Pagina" action="/ListaPagina?faces-redirect=true" />
-                                                    <p:menuitem value="Sugestao"
-                                                            action="ListaSugestoes?faces-redirect=true" />
-                                                    <p:menuitem value="Usuario"
-                                                            action="/ListaUsuarios?faces-redirect=true" />-->
-                </p:submenu>
+                
                 <!-- <p:submenu label="Sistema">
                         <p:menuitem value="Sair" action="#{loginBean.logout}" />
                 </p:submenu> -->
@@ -74,7 +46,7 @@
             <ui:insert name="corpo" />
         </div>
 
-        <footer> Movimentações - SuperMT - Governo </footer>
+        <footer> Desembolso - SuperMT - Pessoa Física </footer>
     </h:body>
 
 </html>
